@@ -2,7 +2,7 @@
 **パナソニック株式会社/FUTURE LIFE FACTORY**
 <br>D+IOプロジェクトは、人間が本来備え持っている創造力をエンパワーするプロジェクトです。
 ### [D+IO プロジェクト詳細](https://panasonic.co.jp/design/flf/works/doing_io/)
-<a href="https://panasonic.co.jp/design/flf/works/doing_io/"><img width="500px" src="https://panasonic.co.jp/design/flf/assets/img/works/doing_io/doing_io_icon.jpg"></a>
+<a href="https://panasonic.co.jp/design/flf/works/doing_io/"><img width="500px" src="https://panasonic.co.jp/design/flf/assets/img/works/doing_io/doing_io_white_main.jpg"></a>
 
 <br><br>
 
@@ -43,14 +43,15 @@ M5Stack Basic / M5Stack Core2 / ATOM Matrix / ATOM Liteで作るeasyHOTLINEの�
 
 |     | 部品名                |  販売リンク（例）                                                   | 備考 |
 |:----:|:---------------------|:----------------------------------------------------------------|:----|
-|  1  | M5Stack Basic |[スイッチサイエンス](https://www.switch-science.com/catalog/3647/) | 1〜4のうちどれかひとつは必須 |
-|  2  | M5Stack Core2 |[スイッチサイエンス](https://www.switch-science.com/catalog/6530/) | 1〜4のうちどれかひとつは必須 |
-|  3  | ATOM Lite |[スイッチサイエンス](https://www.switch-science.com/catalog/6262/) | 1〜4のうちどれかひとつは必須 |
-|  4  | ATOM Matrix |[スイッチサイエンス](https://www.switch-science.com/catalog/6260/) | 1〜4のうちどれかひとつは必須 |
-|  5  | Micro SDカード | [Amazon](https://www.amazon.co.jp/dp/B07FC912NM) | M5Stack Basic, M5Stack Core2の場合必須 |
-|  6  | USB TypeCケーブル | | M5Stack Basic, M5Stack Core2 に付属 |
-|  7  | M5Stack 壁掛けケース | 3Dパーツ(非売品) | 3Dプリンタを使って出力できます([3Dデータ](https://github.com/panasonic-corporation/doingio-easy-hotline/blob/master/CaseModel/Body.stl)) |
-|  8  | ケーブル巻取りケース | 3Dパーツ(非売品) | 3Dプリンタを使って出力できます([3Dデータ](https://github.com/panasonic-corporation/doingio-easy-hotline/blob/master/CaseModel/CableRoll.stl)) |
+|  1  | M5Stack Basic |[スイッチサイエンス](https://www.switch-science.com/catalog/3647/) | 1〜5のうちどれかひとつは必須 |
+|  2  | M5Stack Core2 |[スイッチサイエンス](https://www.switch-science.com/catalog/6530/) | 1〜5のうちどれかひとつは必須 |
+|  3  | ATOM Lite |[スイッチサイエンス](https://www.switch-science.com/catalog/6262/) | 1〜5のうちどれかひとつは必須 |
+|  4  | ATOM Matrix |[スイッチサイエンス](https://www.switch-science.com/catalog/6260/) | 1〜5のうちどれかひとつは必須 |
+|  5  | ATOM Echo |[スイッチサイエンス](https://www.switch-science.com/catalog/6260/) | 1〜5のうちどれかひとつは必須 |
+|  6  | Micro SDカード | [Amazon](https://www.amazon.co.jp/dp/B07FC912NM) | M5Stack Basic, M5Stack Core2の場合必須 |
+|  7  | USB TypeCケーブル | | M5Stack Basic, M5Stack Core2 に付属 |
+|  8  | M5Stack 壁掛けケース | 3Dパーツ(非売品) | 3Dプリンタを使って出力できます([3Dデータ](https://github.com/panasonic-corporation/doingio-easy-hotline/blob/master/CaseModel/Body.stl)) |
+|  9  | ケーブル巻取りケース | 3Dパーツ(非売品) | 3Dプリンタを使って出力できます([3Dデータ](https://github.com/panasonic-corporation/doingio-easy-hotline/blob/master/CaseModel/CableRoll.stl)) |
 
 ★ 参考価格（総額） : 約968円〜6,073円（税込み）
 
@@ -131,9 +132,12 @@ M5Stack Basic / M5Stack Core2 / ATOM Matrix / ATOM Liteで作るeasyHOTLINEの�
         - M5Stack Core2 の場合は 1
         - ATOM Lite の場合は 2
         - ATOM Matrix の場合は 3
+        - ATOM Echo の場合は 4
     - WIFI_SSID  : WiFiのSSID
     - WIFI_PASSWORD : WiFiのパスワード
-    - LINE_TOKEN : 先程LINE Developersで取得したChannel Access Token
+    - LINE_TOKEN : LINE Developersで取得したChannel Access Token
+    - LINE_GROUP_ID : LINEでPUSHメッセージを送る場合に設定する送信先ID（ブロードキャスト送信の場合はコメントアウトしてください）
+    - USE_BLE : BLEで周辺のデバイスにメッセージをAdvertiseする場合は true に設定してください。（USE_BLEを有効にする場合はArduinoの設定項目Partition Schemeを "No OTA" に設定してください。）
     <img src="images/arduino_config.png" width="500px" />
 
 1. EasyHotline.inoを開き、定型文リストを設定してください。
@@ -172,7 +176,7 @@ M5Stack Basic / M5Stack Core2 / ATOM Matrix / ATOM Liteで作るeasyHOTLINEの�
 
     <img src="images/arduino_m5stack_core2_setting.png" width="300px" />
 
-- ATOM Lite, ATOM Matrix の場合
+- ATOM Lite, ATOM Matrix, ATOM Echo の場合
 
     <img src="images/arduino_atom_setting.png" width="300px" />
 
